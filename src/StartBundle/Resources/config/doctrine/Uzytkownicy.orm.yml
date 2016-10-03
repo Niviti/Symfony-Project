@@ -1,0 +1,24 @@
+StartBundle\Entity\Uzytkownicy:
+    type: entity
+    table: null
+    repositoryClass: StartBundle\Repository\UzytkownicyRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        login:
+            type: string
+            length: 255
+            column: Login
+        password:
+            type: string
+            length: 255
+            column: Password
+        email:
+            type: string
+            length: 255
+            column: Email
+    lifecycleCallbacks: {  }

@@ -1,0 +1,26 @@
+start_homepage:
+    path:     /
+    defaults: { _controller: StartBundle:Default:index }
+    
+
+start_action:
+    path:     /new
+    defaults: { _controller: StartBundle:Action:creat }
+
+login:
+     path:   /login
+     defaults:  { _controller: StartBundle:Security:login }
+
+login_check:
+     path:   /login_check
+     
+     
+     
+main_stage:
+     path:   /user/MainStage
+     defaults:  { _controller: StartBundle:Action:main }
+     
+security_logout:
+    path: /logout
+    defaults: { _controller: StartBundle:Security:logout }
+    

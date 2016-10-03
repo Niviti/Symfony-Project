@@ -1,0 +1,5 @@
+start:
+    resource: "@StartBundle/Resources/config/routing.yml"
+    prefix:   /
+
+
