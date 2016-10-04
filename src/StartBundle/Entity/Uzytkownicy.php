@@ -116,6 +116,10 @@ class Uzytkownicy implements UserInterface
         return $this->email;
     }
     
+     public function getRoles()
+    {
+        return ['ROLE_USER'];
+    }
     
     
 }

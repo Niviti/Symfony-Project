@@ -1,7 +1,7 @@
 <?php
 namespace StartBundle\Controller;
 
-
+use StartBundle\Form\LoginForm;
 use Symfony\Component\HttpFoundation\Request;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
@@ -24,13 +24,19 @@ class SecurityController extends Controller {
 
     // nazwa użytkownika ostatnio wprowadzona przez aktualnego użytkownika
     $lastUsername = $authenticationUtils->getLastUsername();
-
+    
+      $form = $this->createForm(LoginForm::class, [
+            '_Login' =>$lastUsername
+            
+        ]);
+    
+    
     return $this->render(
         'StartBundle:Default:login.html.twig',
         array(
-            // nazwa użytkownika ostatnio wprowadzona przez aktualnego użytkownika
-            'last_username' => $lastUsername,
-            'error'         => $error,
+            // last username entered by the user
+             'form' => $form->createView(),
+             'error'         => $error,
         )
     );
     }
@@ -43,12 +49,6 @@ class SecurityController extends Controller {
        }
     
        
-            /**
-     * @Route("/logout", name="security_logout")
-     */
-    public function logoutAction()
-    {
-        throw new\Exception('Trolololo walcz dalej');
-    }
+  
     
 }

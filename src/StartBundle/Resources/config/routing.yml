@@ -20,7 +20,6 @@ main_stage:
      path:   /user/MainStage
      defaults:  { _controller: StartBundle:Action:main }
      
-security_logout:
-    path: /logout
-    defaults: { _controller: StartBundle:Security:logout }
+logout:
+     path:   /logout
     
