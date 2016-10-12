@@ -1,5 +1,5 @@
 <?php
-namespace AppBundle\Security;
+namespace StartBundle\security;
 use AppBundle\Form\LoginForm;
 use Doctrine\ORM\EntityManager;
 use Symfony\Component\Form\FormFactoryInterface;
@@ -47,15 +47,15 @@ class LoginFormAuthenticator extends AbstractFormLoginAuthenticator {
         
         $request->getSession()->set(
             Security::LAST_USERNAME,
-            $data['_username']
+            $data['_Login']
         );
          return $data;
     }
     public function getUser($credentials, UserProviderInterface $userProvider)
     {
-           $username = $credentials['_username'];
+           $username = $credentials['_Login'];
            
-             return $this->em->getRepository('AppBundle:User')
+             return $this->em->getRepository('StartBundle:Uzytkownicy')
             ->findOneBy(['email' => $username]);
     }
     

@@ -18,9 +18,9 @@ class ActionController extends Controller
     public function creatAction()
     {   
         $Uzytkownicy = new Uzytkownicy();
-        $Uzytkownicy->setLogin('Elon');
-        $Uzytkownicy->setPassword('wrxpymww3cpf7');
-        $Uzytkownicy->setEmail('Rafak@o2.pl');
+        $Uzytkownicy->setLogin('Wojtek');
+        $Uzytkownicy->setPassword('Kaszanka');
+        $Uzytkownicy->setEmail('Tutuś@o2.pl');
         
         $em = $this->getDoctrine()->getManager();
         $em->persist($Uzytkownicy);

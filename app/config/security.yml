@@ -29,7 +29,9 @@ security:
 
         main:
             anonymous: ~
-            
+            guard:
+                 authenticators:
+                     - start.security.login_form_authenticator
            
             
     access_control:
@@ -37,7 +39,7 @@ security:
      - { path: ^/admin, roles: ROLE_ADMIN }
      
     encoders:
-           Symfony\Component\Security\Core\User\User: plaintext
+          StartBundle\Entity\: bcrypt
     
     
            
